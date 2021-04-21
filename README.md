@@ -1,7 +1,7 @@
 # Brainstorming Backend
 
 
-Aplicación API en la que usuarios pueden agregar ideas, comentar y votar positiva o negativamente las ideas. Se realiza pruebas unitarias con Jest. Se implementa Docker, documentación con Swagger, Travis y Heroku.
+Aplicación API en la que usuarios pueden agregar ideas, comentar y votar positiva o negativamente las ideas. Se realiza pruebas unitarias con Jest. Se realiza documentación con Swagger. Se implementa Docker, Travis y Heroku.
 
 
 De acuerdo a la arquitectura que se está siguiendo:
