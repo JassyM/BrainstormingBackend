@@ -1,0 +1,19 @@
+version: "3" # Se indica la versión de docker compose
+
+services:
+  api: # Se configura nuestro service. Se puede poner cualquier nombre
+    build: . # Indica qué dockerfile va a crear la imagen de nuestro container
+    depends_on: # Se agrega las dependencias que tenga el servicio. De qué depende.
+      - mongo # indica que este servicio require que ya esté iniciado mongo para que este servicio se pueda construir.
+    environment:
+      - PORT=5000
+      - MONGO_URI=mongodb://mongo:27017/test # Se conecta a la ip del container de mongo
+      - APPLICATION_NAME=Brainstorming
+      - JWT_SECRET=nidsdfiuewrjpwq3234jdj34noisd!!
+      - CACHE_KEY=myStrongPassword
+      - SWAGGER_DOC=swaggerPROD
+    ports:
+      - "5000:5000"
+
+  mongo: # Se puede poner cualquier nombre
+    image: mongo # No se expone el puerto ya que por defecto, nativamente, mongo expone internamente el puerto 27017 en su container.
